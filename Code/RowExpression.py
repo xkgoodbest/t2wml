@@ -12,11 +12,17 @@ class RowExpression:
         :return: row variable of type int
         """
         rv = self.row_variable.evaluate(bindings)
+        data = {"iterate_on": "row", "operations": dict()}
         for i in self.operations:
-            if i['cell_operator'] == '+':
-                rv = rv+int(i['cell_operator_argument'].evaluate(bindings))
-            elif i['cell_operator'] == '-':
-                rv = rv-int(i['cell_operator_argument'].evaluate(bindings))
+            value = i['cell_operator_argument'].evaluate(bindings)
+            if value.isnumeric():
+                if i['cell_operator'] == '+':
+                    rv = rv+int(value)
+                elif i['cell_operator'] == '-':
+                    rv = rv-int(value)
+            else:
+                data['operations'][i['cell_operator']] = value
+        data["row"] = rv
         if rv < -1:
             raise ValueError('Row value out of bound')
-        return rv
+        return data

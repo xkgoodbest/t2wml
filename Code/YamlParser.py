@@ -13,10 +13,10 @@ class YAMLParser:
 		This function parses the region specified in the YAML
 		:return:
 		"""
-		left = parse_and_evaluate(str(self.yaml_data['statementMapping']['region'][0]['left']))
-		right = parse_and_evaluate(str(self.yaml_data['statementMapping']['region'][0]['right']))
-		top = parse_and_evaluate(str(self.yaml_data['statementMapping']['region'][0]['top']))
-		bottom = parse_and_evaluate(str(self.yaml_data['statementMapping']['region'][0]['bottom']))
+		left = parse_and_evaluate(str(self.yaml_data['statementMapping']['region'][0]['left']))['column']
+		right = parse_and_evaluate(str(self.yaml_data['statementMapping']['region'][0]['right']))['column']
+		top = parse_and_evaluate(str(self.yaml_data['statementMapping']['region'][0]['top']))['row']
+		bottom = parse_and_evaluate(str(self.yaml_data['statementMapping']['region'][0]['bottom']))['row']
 		if 'skip_row' in self.yaml_data['statementMapping']['region'][0]:
 			skip_row = list()
 			for i in range(len(self.yaml_data['statementMapping']['region'][0]['skip_row'])):

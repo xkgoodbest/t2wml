@@ -12,11 +12,17 @@ class ColumnExpression:
         :return: column index of type int
         """
         cv = self.column_variable.evaluate(bindings)
+        data = {"iterate_on": "column", "operations": dict()}
         for i in self.operations:
-            if i['cell_operator'] == '+':
-                cv = cv+int(i['cell_operator_argument'].evaluate(bindings))
-            elif i['cell_operator'] == '-':
-                cv = cv-int(i['cell_operator_argument'].evaluate(bindings))
+            value = i['cell_operator_argument'].evaluate(bindings)
+            if str(value).isnumeric():
+                if i['cell_operator'] == '+':
+                    cv = cv+int(value)
+                elif i['cell_operator'] == '-':
+                    cv = cv-int(value)
+            else:
+                data['operations'][i['cell_operator']] = value
+        data["column"] = cv
         if cv < -1:
             raise ValueError('Column value out of bound')
-        return cv
+        return data

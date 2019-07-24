@@ -226,6 +226,7 @@ def load_yaml_data(yaml_filepath: str):
 	"""
 	yaml_parser = YAMLParser(yaml_filepath)
 	region = yaml_parser.get_region()
+	print(region)
 	region['region_object'] = Region(region["left"], region["right"], region["top"], region["bottom"])
 	template = yaml_parser.get_template()
 	return region, template
@@ -260,15 +261,20 @@ def evaluate_template(template: dict) -> dict:
 			for i in range(len(template[key])):
 				temp_dict = dict()
 				for k, v in template[key][i].items():
-					if isinstance(v, (ItemExpression, ValueExpression, BooleanEquation)):
-						col, row, temp_dict[k] = v.evaluate_and_get_cell(bindings)
+					if isinstance(v, BooleanEquation):
+						v = v.evaluate(bindings)
+					if isinstance(v, (ItemExpression, ValueExpression)):
+						col, row, temp_dict[k] = v.evaluate(bindings, return_cell_and_value=True)
 						temp_dict['cell'] = get_actual_cell_index((col, row))
 					else:
 						temp_dict[k] = v
 				response[key].append(temp_dict)
 		else:
-			if isinstance(value, (ItemExpression, ValueExpression, BooleanEquation)):
-				col, row, response[key] = value.evaluate_and_get_cell(bindings)
+			if isinstance(value, BooleanEquation):
+				value = value.evaluate(bindings)
+			if isinstance(value, (ItemExpression, ValueExpression)):
+				print(value.evaluate(bindings, return_cell_and_value=True))
+				col, row, response[key] = value.evaluate(bindings, return_cell_and_value=True)
 				if key == "item":
 					response['cell'] = get_actual_cell_index((col, row))
 			else:

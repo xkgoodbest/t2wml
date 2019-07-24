@@ -36,7 +36,7 @@ column_expression: column_variable (cell_operator cell_operator_argument)*
 row_expression: row_variable (cell_operator cell_operator_argument)*
 
 !cell_operator: "+" | "-"
-cell_operator_argument: WHOLE_NUMBER | VARIABLE
+cell_operator_argument: WHOLE_NUMBER | LETTER
 
 !column_variable: VARIABLE | "$col" | "$left" | "$right"
 !row_variable: WHOLE_NUMBER | "$row" | "$top" | "$bottom"

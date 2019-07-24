@@ -143,7 +143,7 @@ def get_cell(root: str) -> tuple:
     if isinstance(root, (BooleanEquation, RowExpression, ColumnExpression)):
         result = root.evaluate(bindings)
     else:
-        result = root.get_cell(bindings)
+        result = root.evaluate(bindings, return_only_cell=True)
     return result
 
 
@@ -159,5 +159,5 @@ def parse_evaluate_and_get_cell(text_to_parse: str) -> tuple:
     if isinstance(root, (BooleanEquation, RowExpression, ColumnExpression)):
         result = root.evaluate(bindings)
     else:
-        result = root.evaluate_and_get_cell(bindings)
+        result = root.evaluate(bindings, return_cell_and_value=True)
     return result

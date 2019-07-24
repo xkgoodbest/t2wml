@@ -13,6 +13,6 @@ class CellExpression:
         :param bindings:
         :return: column and row indices of type int
         """
-        re = self.row_expression.evaluate(bindings)
-        ce = self.column_expression.evaluate(bindings)
-        return ce, re
+        row_data = self.row_expression.evaluate(bindings)
+        column_data = self.column_expression.evaluate(bindings)
+        return column_data, row_data

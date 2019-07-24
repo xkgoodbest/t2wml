@@ -57,9 +57,12 @@ class ItemTable:
 			sheet = records[sheet_name]
 
 		for cell, qnode in self.cell_to_qnode.items():
-			cell_value = sheet[cell[1], cell[0]]
-			if cell_value not in self.value_to_qnode:
-				self.value_to_qnode[cell_value] = qnode
+			try:
+				cell_value = sheet[cell[1], cell[0]]
+				if cell_value not in self.value_to_qnode:
+					self.value_to_qnode[cell_value] = qnode
+			except IndexError:
+				pass
 
 		for row in range(len(sheet)):
 			for col in range(len(sheet[0])):
