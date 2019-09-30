@@ -12,8 +12,8 @@ from google.oauth2 import id_token
 from google.auth.transport import requests
 from pathlib import Path
 from oslo_concurrency import lockutils
-from Code.Project import Project
-from Code.YAMLFile import YAMLFile
+# from Code.Project import Project
+# from Code.YAMLFile import YAMLFile
 from Code.property_type_map import property_type_map
 
 
@@ -327,7 +327,7 @@ def create_directory(upload_directory: str, uid: str, pid: str = None, ptitle: s
 		Path(Path(upload_directory) / uid / pid / "df").mkdir(parents=True, exist_ok=True)
 		Path(Path(upload_directory) / uid / pid / "wf").mkdir(parents=True, exist_ok=True)
 		Path(Path(upload_directory) / uid / pid / "yf").mkdir(parents=True, exist_ok=True)
-		with open(Path(upload_directory) / uid / pid / "project_config.json", "w") as file:
+		with open(str(Path(upload_directory) / uid / pid / "project_config.json"), "w") as file:
 			project_config = {
 								"pid": pid,
 								"ptitle": ptitle,
@@ -354,7 +354,7 @@ def get_project_details(user_dir: Path) -> List[Dict[str, Any]]:
 	projects = list()
 	for project_dir in user_dir.iterdir():
 		if project_dir.is_dir():
-			with open(project_dir / "project_config.json", "r") as file:
+			with open(str(project_dir / "project_config.json"), "r") as file:
 				project_config = json.load(file)
 				project_detail = dict()
 				project_detail["pid"] = project_config["pid"]
@@ -365,7 +365,7 @@ def get_project_details(user_dir: Path) -> List[Dict[str, Any]]:
 	return projects
 
 
-def get_region_mapping(uid: str, pid: str, project: Project, data_file_name=None, sheet_name=None) -> Tuple[dict, int]:
+def get_region_mapping(uid: str, pid: str, project, data_file_name=None, sheet_name=None) -> Tuple[dict, int]:
 	"""
 	This function reads (and creates if it doesn't exist) and deserialize the respective wikifier config file
 	:param uid:
@@ -378,7 +378,7 @@ def get_region_mapping(uid: str, pid: str, project: Project, data_file_name=None
 	file_name = project.get_or_create_wikifier_region_filename(data_file_name, sheet_name)
 	region_file_path = Path.cwd() / "config" / "uploads" / uid / pid / "wf" / file_name
 	region_file_path.touch(exist_ok=True)
-	with open(region_file_path) as json_data:
+	with open(str(region_file_path)) as json_data:
 		try:
 			region_map = json.load(json_data)
 		except json.decoder.JSONDecodeError:
@@ -433,23 +433,23 @@ def get_project_config_path(uid: str, pid: str) -> str:
 	return str(Path.cwd() / "config" / "uploads" / uid / pid / "project_config.json")
 
 
-def save_yaml_config(yaml_config_file_path: Union[str, Path], yaml_config: YAMLFile) -> None:
+def save_yaml_config(yaml_config_file_path: Union[str, Path], yaml_config) -> None:
 	"""
 	This function saves the YAMLFile object in a pickle file
 	:param yaml_config_file_path:
 	:param yaml_config:
 	:return:
 	"""
-	with open(yaml_config_file_path, 'wb') as config_file:
+	with open(str(yaml_config_file_path), 'wb') as config_file:
 		pickle.dump(yaml_config, config_file)
 
 
-def load_yaml_config(yaml_config_file_path: Union[str, Path]) -> YAMLFile:
+def load_yaml_config(yaml_config_file_path: Union[str, Path]):
 	"""
 	This function loads the pickle file and deserialize the contents into a YAMLFile object
 	:param yaml_config_file_path:
 	:return:
 	"""
-	with open(yaml_config_file_path, 'rb') as config_file:
+	with open(str(yaml_config_file_path), 'rb') as config_file:
 		yaml_config = pickle.load(config_file)
 	return yaml_config

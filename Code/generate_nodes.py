@@ -17,7 +17,7 @@ def model_data() -> None:
 	This function generates triples for user defined properties for uploading them to wikidata
 	:return:
 	"""
-	stream = open(Path.cwd().parent / "Datasets/new-property-configuration.yaml", 'r', encoding='utf8')
+	stream = open(str(Path.cwd().parent / "Datasets" / "new-property-configuration.yaml"), 'r', encoding='utf8')
 	yaml_data = yaml.safe_load(stream)
 	# initialize
 	kg_schema = KGSchema()
@@ -91,7 +91,7 @@ def model_data() -> None:
 
 		doc.kg.add_subject(p)
 
-	with open(Path.cwd().parent / "new_properties/result.ttl", "w") as f:
+	with open(str(Path.cwd().parent / "new_properties/result.ttl"), "w") as f:
 		data = doc.kg.serialize('ttl')
 		f.write(data)
 

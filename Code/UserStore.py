@@ -28,7 +28,7 @@ class UserStore:
 			config_folder_path.mkdir(parents=True, exist_ok=True)
 			self.file_path = config_folder_path / "users.json"
 			self.file_path.touch(exist_ok=True)
-			with open(self.file_path) as json_data:
+			with open(str(self.file_path)) as json_data:
 				try:
 					self.__user_list = json.load(json_data)
 				except json.decoder.JSONDecodeError as e:
@@ -60,7 +60,7 @@ class UserStore:
 					'projects': dict()
 					}
 			self.__user_list[user_id] = user
-			with open(self.file_path, 'w') as users_json:
+			with open(str(self.file_path), 'w') as users_json:
 				json.dump(self.__user_list, users_json, indent=3)
 
 	def get_user_info(self, user_id: str) -> dict:
