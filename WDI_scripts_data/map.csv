@@ -1,0 +1,60 @@
+code,topic,Qnode1,label1,page1,Qnode2,label2,page2
+AG,Agriculture,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+BG,Balance of payments: gross,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+BM,"Balance of payments: imports, payments (credit)",Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+BN,Balance of payments: net,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+BX,"Balance of payments: exports, receipts (debit)",Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+CM,Capital markets,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934
+DC,Debt: aid flows from DAC,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934
+DT,Debt: external,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934
+EA,Environment: agriculture,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+EE,Environment: emissions,Q22969167,Wikidata property related to climate,https://www.wikidata.org/wiki/Q22969167,,,
+EG,Environment: energy,Q22969167,Wikidata property related to climate,https://www.wikidata.org/wiki/Q22969167,,,
+EN,Environment: general,Q22969167,Wikidata property related to climate,https://www.wikidata.org/wiki/Q22969167,,,
+EP,Environment: prices,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+ER,Environment: resources,Q22988651,Wikidata property related to geology,https://www.wikidata.org/wiki/Q22988651,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178
+FA,Financial: monetary authorities,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+FB,Financial: bank (miscellaneous),Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,Q51326087,Wikidata property related to banking,https://www.wikidata.org/wiki/Q51326087
+FD,Financial: deposit money banks,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,Q51326087,Wikidata property related to banking,https://www.wikidata.org/wiki/Q51326087
+FI,Financial: international liquidity,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,Q22984475,Wikidata property related to politics,https://www.wikidata.org/wiki/Q22984475
+FM,Financial: monetary survey,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+FO,Financial: other banking institutions,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+FP,Financial: prices,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+FR,Financial: interest rates,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934
+FS,Financial: banking survey,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+GB,Government finance: other sources,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934
+GC,Government finance: IMF,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934
+GF,Public financial management,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934
+IC,Investment climate,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+IE,Infrastructure: expenditure,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934
+IP,Intellectual property,Q22984026,Wikidata property related to law and justice,https://www.wikidata.org/wiki/Q22984026,Q22984475,Wikidata property related to politics,https://www.wikidata.org/wiki/Q22984475
+IQ,Index quality assessment,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934,,,
+IS,Infrastructure: transportation,Q22984363,Wikidata property related to transport,https://www.wikidata.org/wiki/Q22984363,,,
+IT,Infrastructure: telecommunications,Q66728614,Wikidata property related to internet radio,https://www.wikidata.org/wiki/Q66728614,,,
+LP,Logistics performance,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934,,,
+MG,Millennium Development Goals,Q22984475,Wikidata property related to politics,https://www.wikidata.org/wiki/Q22984475,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934
+MS,Military statistics,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934,,,
+NE,National accounts: expenditure,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+NV,National accounts: value added,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934
+NY,National accounts: income,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934
+PA,Prices: period average,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934
+PE,Prices: end period,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+PX,Prices: index,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+SD,Social: development,Q22984475,Wikidata property related to politics,https://www.wikidata.org/wiki/Q22984475,,,
+SE,Social: education,Q22984450,Wikidata property related to education,https://www.wikidata.org/wiki/Q22984450,,,
+SF,Social: infrastructure,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934,,,
+SG,Social: gender,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934,,,
+SH,Social: health,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934,,,
+SI,Social: income,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+SL,Social: labor,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934,,,
+SM,Social: migration,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934,Q22984475,Wikidata property related to politics,https://www.wikidata.org/wiki/Q22984475
+SN,Social: nutrition,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934,,,
+SP,Social: population,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934,Q22984494,Wikidata property related to demography,https://www.wikidata.org/wiki/Q22984494
+SR,Social: natural resources,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934,,,
+ST,Social: tourism,Q29110152,Wikidata property related to tourism,https://www.wikidata.org/wiki/Q29110152,,,
+TG,Trade: gross,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+TM,Trade: imports,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+TP,Trade: policy,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934
+TT,Trade: terms of trade,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,Q22997934,Wikidata property related to government and state,https://www.wikidata.org/wiki/Q22997934
+TX,Trade: exports,Q21451178,Wikidata property related to economics,https://www.wikidata.org/wiki/Q21451178,,,
+VC,Violence and conflict,Q22984475,Wikidata property related to politics,https://www.wikidata.org/wiki/Q22984475,Q18608756,Wikidata property for birth or death,https://www.wikidata.org/wiki/Q18608756
