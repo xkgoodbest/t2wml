@@ -10,6 +10,8 @@ from etk.etk_module import ETKModule
 from etk.wikidata.entity import WDProperty, WDItem
 from etk.wikidata.value import Datatype, Item, Property, StringValue, URLValue, TimeValue, QuantityValue, MonolingualText, ExternalIdentifier, GlobeCoordinate
 from etk.wikidata import serialize_change_record
+import regex
+
 
 
 def model_data() -> None:
@@ -17,7 +19,9 @@ def model_data() -> None:
 	This function generates triples for user defined properties for uploading them to wikidata
 	:return:
 	"""
-	stream = open(Path.cwd().parent / "Datasets/new-property-configuration.yaml", 'r', encoding='utf8')
+	# stream = open(Path.cwd().parent / "Datasets/new-property-configuration.yaml", 'r', encoding='utf8')
+	stream = open("/Users/xkgoodbest/Programs/ISI/t2wml/WDI_scripts_data/perperties.yaml", 'r', encoding='utf8')
+	# stream = open("/Users/xkgoodbest/Downloads/test.yaml", 'r', encoding='utf8')
 	yaml_data = yaml.safe_load(stream)
 	# initialize
 	kg_schema = KGSchema()
@@ -52,14 +56,17 @@ def model_data() -> None:
 		'quantity': Datatype.QuantityValue,
 		'url': URLValue
 	}
+	regex_str = r'[\u2019|\u2013|\u201c|\u201d]'
 	property_type_cache = {}
 	for k, v in yaml_data.items():
 		p = WDProperty(k, type_map[v['type']], creator='http://www.isi.edu/t2wml')
 		for lang, value in v['label'].items():
 			for val in value:
+				val = regex.sub(regex_str, u' ', val)
 				p.add_label(val, lang=lang)
 		for lang, value in v['description'].items():
 			for val in value:
+				val = regex.sub(regex_str, u' ', val)
 				p.add_description(val, lang=lang)
 		for pnode, items in v['statements'].items():
 			for item in items:
@@ -68,7 +75,10 @@ def model_data() -> None:
 				except KeyError:
 					property_type = get_property_type(pnode, sparql_endpoint)
 					property_type_cache[pnode] = property_type
+				# item['value'] = regex.sub(r'[^\p{Latin}]', u'', str(item['value']))
 				if property_type == "WikibaseItem":
+					value = Item(str(item['value']))
+				elif property_type == "Item":
 					value = Item(str(item['value']))
 				elif property_type == "WikibaseProperty":
 					value = Property(item['value'])
@@ -91,12 +101,13 @@ def model_data() -> None:
 
 		doc.kg.add_subject(p)
 
-	with open(Path.cwd().parent / "new_properties/result.ttl", "w") as f:
+	# with open(Path.cwd().parent / "new_properties/result.ttl", "w") as f:
+	with open("/Users/xkgoodbest/Downloads/result.ttl", "w", encoding='utf-8') as f:
 		data = doc.kg.serialize('ttl')
 		f.write(data)
 
 #
-# model_data()
+model_data()
 # with open(Path.cwd().parent / "new_properties/changes.tsv", "w") as fp:
 # 	serialize_change_record(fp)
 
